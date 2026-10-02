@@ -2,6 +2,7 @@
 import axios, { CanceledError, CancelTokenSource } from "axios";
 import { EncryptionCipher, PolicyType } from "../../../../api/explorer.ts";
 import CrUri from "../../../../util/uri.ts";
+import { hashFile } from "../../../../util/hash.ts";
 import { createUploadSession, deleteUploadSession } from "../api";
 import { UploaderError } from "../errors";
 import UploadManager from "../index";
@@ -18,6 +19,7 @@ export enum Status {
   initialized,
   queued,
   preparing,
+  hashing,
   processing,
   finishing,
   finished,
@@ -135,6 +137,32 @@ export default abstract class Base {
   public run = async () => {
     this.logger.info("Start upload task, create upload session...");
     this.transit(Status.preparing);
+
+    // A content-addressed policy names the object after the hash of its
+    // content, so the hash is computed before the session is created and sent
+    // along with it. The server re-derives and verifies the hash while
+    // receiving, so this only saves it from buffering the whole file.
+    let clientHash: string | undefined;
+    if (this.task.policy.client_hash_required) {
+      this.transit(Status.hashing);
+      try {
+        clientHash = await hashFile(
+          this.task.file,
+          (percent) => this.updateHashProgress(percent),
+          this.cancelToken.token,
+        );
+        this.logger.info(`Content hash computed: ${clientHash}`);
+      } catch (e) {
+        // Hashing is an optimisation: when it cannot be done the upload still
+        // proceeds, and the server falls back to buffering the stream.
+        this.logger.warn("Failed to compute content hash, uploading without it:", e);
+        if (this.cancelToken.token.reason) {
+          this.setError(e as Error);
+          return;
+        }
+      }
+    }
+
     const cachedInfo = utils.getResumeCtx(this.task, this.logger);
     if (cachedInfo == null) {
       const crUri = new CrUri(this.task.dst);
@@ -149,6 +177,7 @@ export default abstract class Base {
           entity_type: this.task.overwrite ? "version" : undefined,
           encryption_supported:
             this.task.policy.encryption && "crypto" in window ? [EncryptionCipher.aes256ctr] : undefined,
+          client_hash: clientHash,
         },
         this.cancelToken.token,
       );
@@ -279,6 +308,17 @@ export default abstract class Base {
       percent: (loaded / size) * 100,
       ...(fromCache == null ? {} : { fromCache }),
     };
+  }
+
+  // updateHashProgress reports how much of the file has been read to compute
+  // its content hash. It is reported as the whole-file figure because hashing
+  // precedes the transfer and is the only work in flight at that point.
+  protected updateHashProgress(percent: number) {
+    const size = this.task.file.size;
+    this.progress = {
+      total: this.getProgressInfoItem((percent / 100) * size, size),
+    };
+    this.subscriber.onProgress(this.progress);
   }
 
   public key(): string {

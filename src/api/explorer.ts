@@ -120,6 +120,13 @@ export interface StoragePolicy {
   chunk_concurrency?: number;
   encryption?: boolean;
   streaming_encryption?: boolean;
+  /**
+   * The policy names objects after the hash of their content, so a client
+   * should compute the file's SHA-256 before uploading. Supplying it lets the
+   * server address and stream the upload directly instead of buffering the
+   * whole file to compute the hash itself.
+   */
+  client_hash_required?: boolean;
 }
 
 export interface PaginationResults {
@@ -513,6 +520,16 @@ export interface UploadSessionRequest {
   };
   mime_type?: string;
   encryption_supported?: EncryptionCipher[];
+  /**
+   * Lowercase hex SHA-256 of the content about to be uploaded.
+   *
+   * Content-addressed storage policies name an object by its digest, so
+   * supplying it lets the server address and stream the upload directly instead
+   * of buffering the whole file to compute the digest itself. The server
+   * recomputes and verifies it, so a wrong value fails the upload rather than
+   * filing content under the wrong path.
+   */
+  client_hash?: string;
 }
 
 export interface EncryptMetadata {
