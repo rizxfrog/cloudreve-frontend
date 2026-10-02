@@ -1143,6 +1143,13 @@
     "fileEncryption": "Crittografia file",
     "enableFileEncryption": "Abilita crittografia file",
     "enableFileEncryptionDes": "Quando abilitato, i blob dei file verranno archiviati crittografati. La modifica di questa impostazione influisce solo sui file appena aggiunti.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "ID del repository",
+    "modelscopeToken": "Token di accesso",
+    "modelscopeTokenDes": "Crea un token di accesso nelle impostazioni del tuo account ModelScope e incollalo qui. Il token è obbligatorio per caricare i file.",
+    "modelscopeRepoType": "Tipo di repository",
+    "modelscopeNamespace": "Namespace",
+    "modelscopeRevision": "Revisione",
     "encryptedFile": "File crittografati"
   },
   "node": {

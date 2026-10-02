@@ -1146,6 +1146,13 @@
     "fileEncryption": "Шифрование файлов",
     "enableFileEncryption": "Включить шифрование файлов",
     "enableFileEncryptionDes": "При включении блобы файлов будут храниться в зашифрованном виде. Изменение этого параметра влияет только на вновь добавляемые файлы.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "ID репозитория",
+    "modelscopeToken": "Токен доступа",
+    "modelscopeTokenDes": "Создайте токен доступа в настройках аккаунта ModelScope и вставьте его сюда. Токен необходим для загрузки файлов.",
+    "modelscopeRepoType": "Тип репозитория",
+    "modelscopeNamespace": "Пространство имён",
+    "modelscopeRevision": "Ревизия",
     "encryptedFile": "Зашифрованные файлы"
   },
   "node": {

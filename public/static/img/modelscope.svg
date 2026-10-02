@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <defs>
+    <linearGradient id="modelscopeTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E5BFF"/>
+      <stop offset="1" stop-color="#7A3BFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="120" rx="20" fill="url(#modelscopeTile)"/>
+  <path d="M100 67 L138 84 L100 101 L62 84 Z" fill="#FFFFFF" fill-opacity="0.35"/>
+  <path d="M100 49 L138 66 L100 83 L62 66 Z" fill="#FFFFFF" fill-opacity="0.6"/>
+  <path d="M100 31 L138 48 L100 65 L62 48 Z" fill="#FFFFFF" fill-opacity="0.95"/>
+</svg>

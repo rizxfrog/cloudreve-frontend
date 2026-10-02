@@ -104,6 +104,7 @@ export enum PolicyType {
   ks3 = "ks3",
   obs = "obs",
   load_balance = "load_balance",
+  modelscope = "modelscope",
 }
 
 export interface StoragePolicy {

@@ -1145,6 +1145,13 @@
     "fileEncryption": "文件加密",
     "enableFileEncryption": "启用文件加密",
     "enableFileEncryptionDes": "开启后，文件 Blob 会被加密存储。更改此设置只对新增的文件有效。",
+    "modelscope": "魔搭 ModelScope",
+    "modelscopeRepoId": "仓库 ID",
+    "modelscopeToken": "访问令牌",
+    "modelscopeTokenDes": "在魔搭账号设置中创建访问令牌并填入此处，上传文件时必须提供该令牌。",
+    "modelscopeRepoType": "仓库类型",
+    "modelscopeNamespace": "命名空间",
+    "modelscopeRevision": "修订版本",
     "encryptedFile": "加密的文件"
   },
   "node": {

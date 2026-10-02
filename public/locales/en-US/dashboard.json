@@ -1145,6 +1145,13 @@
     "fileEncryption": "File encryption",
     "enableFileEncryption": "Enable file encryption",
     "enableFileEncryptionDes": "When enabled, file blobs will be stored encrypted. Changing this setting only affects newly added files.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "Repository ID",
+    "modelscopeToken": "Access token",
+    "modelscopeTokenDes": "Create an access token in the settings of your ModelScope account and paste it here. The token is required for uploading files.",
+    "modelscopeRepoType": "Repository type",
+    "modelscopeNamespace": "Namespace",
+    "modelscopeRevision": "Revision",
     "encryptedFile": "Encrypted files"
   },
   "node": {

@@ -244,6 +244,9 @@ export interface PolicySetting {
   qiniu_upload_cdn?: boolean;
   chunk_concurrency?: number;
   encryption?: boolean;
+  modelscope_repo_type?: string;
+  modelscope_revision?: string;
+  modelscope_namespace?: string;
 }
 
 export interface User extends CommonMixin {

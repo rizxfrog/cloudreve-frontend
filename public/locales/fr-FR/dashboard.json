@@ -1144,6 +1144,13 @@
     "fileEncryption": "Chiffrement des fichiers",
     "enableFileEncryption": "Activer le chiffrement des fichiers",
     "enableFileEncryptionDes": "Lorsqu'il est activé, les blobs de fichiers seront stockés chiffrés. La modification de ce paramètre n'affecte que les fichiers nouvellement ajoutés.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "ID du dépôt",
+    "modelscopeToken": "Jeton d'accès",
+    "modelscopeTokenDes": "Créez un jeton d'accès dans les paramètres de votre compte ModelScope et collez-le ici. Le jeton est requis pour téléverser des fichiers.",
+    "modelscopeRepoType": "Type de dépôt",
+    "modelscopeNamespace": "Espace de noms",
+    "modelscopeRevision": "Révision",
     "encryptedFile": "Fichiers chiffrés"
   },
   "node": {

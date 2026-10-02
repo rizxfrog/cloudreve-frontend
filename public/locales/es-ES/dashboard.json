@@ -1144,6 +1144,13 @@
     "fileEncryption": "Cifrado de archivos",
     "enableFileEncryption": "Habilitar cifrado de archivos",
     "enableFileEncryptionDes": "Cuando está habilitado, los blobs de archivos se almacenarán cifrados. Cambiar esta configuración solo afecta a los archivos recién agregados.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "ID del repositorio",
+    "modelscopeToken": "Token de acceso",
+    "modelscopeTokenDes": "Crea un token de acceso en la configuración de tu cuenta de ModelScope y pégalo aquí. El token es obligatorio para subir archivos.",
+    "modelscopeRepoType": "Tipo de repositorio",
+    "modelscopeNamespace": "Espacio de nombres",
+    "modelscopeRevision": "Revisión",
     "encryptedFile": "Archivos cifrados"
   },
   "node": {

@@ -9,6 +9,14 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 const backend = "http://localhost:5212";
 const backendProxyOption = { target: backend, headers: { host: new URL(backend).host } };
 
+// The precache manifest would otherwise contain index.html, and workbox serves a
+// precached index.html for "/" as well. index.html is the version manifest: it
+// names the content-hashed bundles of one release, so serving it from cache
+// pins the browser to the previous build and a rebuilt deployment looks stale
+// until the cache is cleared. Navigations therefore go to the network first,
+// falling back to the cached copy only while offline.
+const HTML_CACHE = "html";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,9 +26,28 @@ export default defineConfig({
       injectRegister: "auto",
       manifest: false,
       workbox: {
-        globIgnores: ["**/*leaflet*", "**/*mapbox*", "**/*Leaflet*", "**/*Mapbox*"],
+        globIgnores: ["**/*leaflet*", "**/*mapbox*", "**/*Leaflet*", "**/*Mapbox*", "**/index.html"],
         maximumFileSizeToCacheInBytes: 10000000,
-        navigateFallbackDenylist: [/^\/pdfviewer.html/, /^\/api\/(.+)/, /^\/f\/(.+)/, /^\/s\/(.+)/],
+        // index.html is deliberately not precached, so the generated navigation
+        // fallback would bind to a URL absent from the manifest and abort the
+        // install. The NetworkFirst route below covers navigations instead.
+        navigateFallback: null,
+        // Offline navigations still work from this cache, but an online request
+        // always wins so a new deployment is picked up on a plain refresh.
+        runtimeCaching: [
+          {
+            urlPattern: ({ request, url }) =>
+              request.mode === "navigate" &&
+              !/^\/(api|dav|f|s)\//.test(url.pathname) &&
+              url.pathname !== "/pdfviewer.html",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: HTML_CACHE,
+              networkTimeoutSeconds: 3,
+              expiration: { maxEntries: 4 },
+            },
+          },
+        ],
       },
       devOptions: {
         enabled: true,

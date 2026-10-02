@@ -1145,6 +1145,13 @@
     "fileEncryption": "تشفير الملفات",
     "enableFileEncryption": "تفعيل تشفير الملفات",
     "enableFileEncryptionDes": "عند التفعيل، ستخزن Blob الملفات مشفرة. تغيير هذا الإعداد يؤثر فقط على الملفات المضافة حديثًا.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "معرّف المستودع",
+    "modelscopeToken": "رمز الوصول",
+    "modelscopeTokenDes": "أنشئ رمز وصول في إعدادات حسابك على ModelScope والصقه هنا. رمز الوصول مطلوب لرفع الملفات.",
+    "modelscopeRepoType": "نوع المستودع",
+    "modelscopeNamespace": "مساحة الاسم",
+    "modelscopeRevision": "المراجعة",
     "encryptedFile": "الملفات المشفرة"
   },
   "node": {

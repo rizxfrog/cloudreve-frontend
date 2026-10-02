@@ -1145,6 +1145,13 @@
     "fileEncryption": "ファイル暗号化",
     "enableFileEncryption": "ファイル暗号化を有効にする",
     "enableFileEncryptionDes": "有効にすると、ファイルのBlobが暗号化されて保存されます。この設定の変更は新しく追加されたファイルにのみ有効です。",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "リポジトリ ID",
+    "modelscopeToken": "アクセストークン",
+    "modelscopeTokenDes": "ModelScope のアカウント設定でアクセストークンを作成し、ここに入力してください。ファイルのアップロードにはトークンが必須です。",
+    "modelscopeRepoType": "リポジトリ種別",
+    "modelscopeNamespace": "名前空間",
+    "modelscopeRevision": "リビジョン",
     "encryptedFile": "暗号化されたファイル"
   },
   "node": {

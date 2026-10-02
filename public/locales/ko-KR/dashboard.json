@@ -1145,6 +1145,13 @@
     "fileEncryption": "파일 암호화",
     "enableFileEncryption": "파일 암호화 활성화",
     "enableFileEncryptionDes": "활성화하면 파일 Blob이 암호화되어 저장됩니다. 이 설정을 변경하면 새로 추가되는 파일에만 적용됩니다.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "저장소 ID",
+    "modelscopeToken": "액세스 토큰",
+    "modelscopeTokenDes": "ModelScope 계정 설정에서 액세스 토큰을 생성하여 여기에 입력하세요. 파일 업로드 시 토큰이 필요합니다.",
+    "modelscopeRepoType": "저장소 유형",
+    "modelscopeNamespace": "네임스페이스",
+    "modelscopeRevision": "리비전",
     "encryptedFile": "암호화된 파일"
   },
   "node": {

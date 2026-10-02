@@ -1145,6 +1145,13 @@
     "fileEncryption": "檔案加密",
     "enableFileEncryption": "啟用檔案加密",
     "enableFileEncryptionDes": "開啟後，檔案 Blob 會被加密儲存。更改此設定只對新增的檔案有效。",
+    "modelscope": "魔搭 ModelScope",
+    "modelscopeRepoId": "倉庫 ID",
+    "modelscopeToken": "存取權杖",
+    "modelscopeTokenDes": "在魔搭帳號設定中建立存取權杖並填入此處，上傳檔案時必須提供該權杖。",
+    "modelscopeRepoType": "倉庫類型",
+    "modelscopeNamespace": "命名空間",
+    "modelscopeRevision": "修訂版本",
     "encryptedFile": "加密的檔案"
   },
   "node": {

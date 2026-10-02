@@ -1145,6 +1145,13 @@
     "fileEncryption": "Szyfrowanie plików",
     "enableFileEncryption": "Włącz szyfrowanie plików",
     "enableFileEncryptionDes": "Gdy włączone, bloby plików będą przechowywane zaszyfrowane. Zmiana tego ustawienia wpływa tylko na nowo dodane pliki.",
+    "modelscope": "ModelScope",
+    "modelscopeRepoId": "ID repozytorium",
+    "modelscopeToken": "Token dostępu",
+    "modelscopeTokenDes": "Utwórz token dostępu w ustawieniach swojego konta ModelScope i wklej go tutaj. Token jest wymagany do przesyłania plików.",
+    "modelscopeRepoType": "Typ repozytorium",
+    "modelscopeNamespace": "Przestrzeń nazw",
+    "modelscopeRevision": "Rewizja",
     "encryptedFile": "Zaszyfrowane pliki"
   },
   "node": {
