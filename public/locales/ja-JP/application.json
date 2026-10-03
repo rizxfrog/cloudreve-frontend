@@ -453,7 +453,8 @@
     "noEncryption": "暗号化されていません",
     "ftsStatus": "全文インデックス",
     "ftsIndexed": "インデックス済み",
-    "ftsNotIndexed": "未インデックス"
+    "ftsNotIndexed": "未インデックス",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "共有リンクにパスワードを含める",

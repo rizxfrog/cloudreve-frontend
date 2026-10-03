@@ -47,6 +47,11 @@ const Data = ({ target }: DataProps) => {
     return null;
   }
 
+  // Content-addressed policies (ModelScope) report a content digest for each
+  // stored object. Render the column only when at least one entity carries one,
+  // so other policies keep the table unchanged.
+  const hasSha256 = target.extended_info.entities.some((e) => !!e.sha256);
+
   return (
     <>
       <Typography sx={{ pt: 1 }} color="textPrimary" fontWeight={500} variant={"subtitle1"}>
@@ -60,6 +65,7 @@ const Data = ({ target }: DataProps) => {
               <NoWrapTableCell>{t("fileManager.size")}</NoWrapTableCell>
               <NoWrapTableCell>{t("fileManager.createdAt")}</NoWrapTableCell>
               <NoWrapTableCell>{t("fileManager.storagePolicy")}</NoWrapTableCell>
+              {hasSha256 && <NoWrapTableCell>{t("fileManager.sha256")}</NoWrapTableCell>}
               <NoWrapTableCell>{t("fileManager.actions")}</NoWrapTableCell>
             </TableRow>
           </TableHead>
@@ -72,6 +78,13 @@ const Data = ({ target }: DataProps) => {
                 <NoWrapTableCell>{sizeToString(versionSizes)}</NoWrapTableCell>
                 <TableCell>-</TableCell>
                 <TableCell>-</TableCell>
+                {hasSha256 && (
+                  <NoWrapTableCell>
+                    <Typography variant={"body2"} sx={{ fontFamily: "monospace", wordBreak: "break-all" }}>
+                      {target.extended_info?.entities?.find((e) => e.type === EntityType.version)?.sha256}
+                    </Typography>
+                  </NoWrapTableCell>
+                )}
                 <TableCell>
                   <Link
                     href={"#"}
@@ -95,6 +108,15 @@ const Data = ({ target }: DataProps) => {
                     <TimeBadge variant={"body2"} datetime={e.created_at} />
                   </TableCell>
                   <NoWrapTableCell>{e.storage_policy?.name}</NoWrapTableCell>
+                  {hasSha256 && (
+                    <NoWrapTableCell>
+                      {e.sha256 && (
+                        <Typography variant={"body2"} sx={{ fontFamily: "monospace", wordBreak: "break-all" }}>
+                          {e.sha256}
+                        </Typography>
+                      )}
+                    </NoWrapTableCell>
+                  )}
                   <NoWrapTableCell>
                     <Link href={"#"} underline={"hover"} onClick={() => downloadEntity(e.id)}>
                       {t("fileManager.download")}

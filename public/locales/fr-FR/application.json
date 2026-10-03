@@ -488,7 +488,8 @@
     "noEncryption": "Non chiffré",
     "ftsStatus": "Index plein texte",
     "ftsIndexed": "Indexé",
-    "ftsNotIndexed": "Non indexé"
+    "ftsNotIndexed": "Non indexé",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "Inclure le mot de passe dans le lien de partage",

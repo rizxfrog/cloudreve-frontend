@@ -69,6 +69,11 @@ export interface Entity {
   size: number;
   created_by?: User;
   encrypted_with?: EncryptionCipher;
+  /**
+   * Content digest of the stored object, present only for content-addressed
+   * storage policies (the stored path is derived from it).
+   */
+  sha256?: string;
 }
 
 export interface Share {

@@ -453,7 +453,8 @@
     "noEncryption": "Niezaszyfrowane",
     "ftsStatus": "Indeks pełnotekstowy",
     "ftsIndexed": "Zindeksowane",
-    "ftsNotIndexed": "Niezindeksowane"
+    "ftsNotIndexed": "Niezindeksowane",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "Dołącz hasło do linku udostępniania",

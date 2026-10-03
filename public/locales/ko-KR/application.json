@@ -488,7 +488,8 @@
     "noEncryption": "암호화되지 않음",
     "ftsStatus": "전문 검색 인덱스",
     "ftsIndexed": "인덱스됨",
-    "ftsNotIndexed": "인덱스되지 않음"
+    "ftsNotIndexed": "인덱스되지 않음",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "공유 링크에 비밀번호 포함",

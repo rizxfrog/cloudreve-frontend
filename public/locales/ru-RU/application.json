@@ -488,7 +488,8 @@
     "noEncryption": "Не зашифровано",
     "ftsStatus": "Полнотекстовый индекс",
     "ftsIndexed": "Проиндексировано",
-    "ftsNotIndexed": "Не проиндексировано"
+    "ftsNotIndexed": "Не проиндексировано",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "Включить пароль в ссылку на публикацию",

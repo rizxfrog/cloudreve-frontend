@@ -449,7 +449,8 @@
     "noEncryption": "غير مشفر",
     "ftsStatus": "فهرس النص الكامل",
     "ftsIndexed": "مفهرس",
-    "ftsNotIndexed": "غير مفهرس"
+    "ftsNotIndexed": "غير مفهرس",
+    "sha256": "SHA-256"
   },
   "modals": {
     "includePasswordInShareLink": "اضافة كلمة المرور في رابط المشاركة",
