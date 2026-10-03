@@ -561,6 +561,12 @@ export interface UploadCredential {
   mime_type?: string;
   upload_policy?: string;
   encrypt_metadata?: EncryptMetadata;
+  /**
+   * The store already holds the content this session describes, confirmed from
+   * the content hash. No content is sent; completing the session records a
+   * reference to the object already present.
+   */
+  prevalidated?: boolean;
 }
 
 export interface DeleteUploadSessionService {

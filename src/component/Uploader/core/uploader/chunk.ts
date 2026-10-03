@@ -1,3 +1,4 @@
+import { completePrevalidatedUpload } from "../api";
 import * as utils from "../utils";
 import Base from "./base";
 import { EncryptedBlob } from "./encrypt/blob";
@@ -20,6 +21,16 @@ export default abstract class Chunk extends Base {
   private progressUpdateMutex = Promise.resolve(); // Ensure progress updates are serialized
 
   public upload = async () => {
+    // The store already holds this content, confirmed from the hash. Nothing is
+    // sent; completion records a reference to the object already present.
+    if (this.task.session?.prevalidated) {
+      this.logger.info("Content already stored, completing without uploading.");
+      this.chunks = [];
+      this.task.chunkProgress = [];
+      await completePrevalidatedUpload(this.task.session.session_id, this.cancelToken.token);
+      return;
+    }
+
     this.logger.info("Preparing uploading file chunks.");
     this.initBeforeUploadChunks();
 

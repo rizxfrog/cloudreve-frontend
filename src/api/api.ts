@@ -738,6 +738,25 @@ export function sendCreateUploadSession(req: UploadSessionRequest): ThunkRespons
   };
 }
 
+/**
+ * Completes a session whose content the store already holds. No body is sent:
+ * the server only records a reference to the object it already has, resolved
+ * from the content hash supplied when the session was created.
+ */
+export function sendCompletePrevalidated(sessionID: string, cancel?: CancelToken): ThunkResponse<UploadCredential> {
+  return async (dispatch, _getState) => {
+    return await dispatch(
+      send(`/file/upload/${sessionID}/0`, {
+        method: "POST",
+        cancelToken: cancel,
+        headers: {
+          "Content-Type": "application/octet-stream",
+        },
+      }),
+    );
+  };
+}
+
 export function sendUploadChunk(
   sessionID: string,
   chunk: Blob,

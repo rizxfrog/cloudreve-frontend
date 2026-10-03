@@ -1,5 +1,6 @@
 import { CancelToken } from "axios";
 import {
+  sendCompletePrevalidated,
   sendCreateUploadSession,
   sendDeleteUploadSession,
   sendOneDriveCompleteUpload,
@@ -49,6 +50,18 @@ export async function deleteUploadSession(id: string, uri: string): Promise<any>
   } catch (e) {
     if (e instanceof AppError) {
       throw new DeleteUploadSessionError(e.response);
+    }
+
+    throw e;
+  }
+}
+
+export async function completePrevalidatedUpload(sessionID: string, cancel: CancelToken): Promise<any> {
+  try {
+    return await store.dispatch(sendCompletePrevalidated(sessionID, cancel));
+  } catch (e) {
+    if (e instanceof AppError) {
+      throw new LocalChunkUploadError(e.response, 0);
     }
 
     throw e;
