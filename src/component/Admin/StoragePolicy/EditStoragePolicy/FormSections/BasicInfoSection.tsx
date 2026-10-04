@@ -7,6 +7,7 @@ import {
   Link,
   ListItemText,
   SelectChangeEvent,
+  Stack,
   Typography,
 } from "@mui/material";
 import { useSnackbar } from "notistack";
@@ -24,6 +25,7 @@ import SettingForm from "../../../../Pages/Setting/SettingForm";
 import { Code } from "../../../../Common/Code.tsx";
 import { EndpointInput } from "../../../Common/EndpointInput";
 import NodeSelectionInput from "../../../Common/NodeSelectionInput";
+import ModelScopeCommitMode from "../../Wizards/ModelScope/ModelScopeCommitMode";
 import { NoMarginHelperText, SettingSection, SettingSectionContent } from "../../../Settings/Settings";
 import { PolicyPropsMap } from "../../StoragePolicySetting";
 import GraphEndpointSelection from "../../Wizards/OneDrive/GraphEndpointSelection";
@@ -279,6 +281,7 @@ const BasicInfoSection = () => {
     },
     [setPolicy],
   );
+
   return (
     <SettingSection>
       <Typography variant="h6" gutterBottom>
@@ -587,6 +590,12 @@ const BasicInfoSection = () => {
               </FormControl>
             </SettingForm>
           </>
+        )}
+        {values.type === PolicyType.modelscope && (
+          <ModelScopeCommitMode
+            settings={values.settings}
+            onChange={(patch) => setPolicy((p: StoragePolicy) => ({ ...p, settings: { ...p.settings, ...patch } }))}
+          />
         )}
       </SettingSectionContent>
     </SettingSection>

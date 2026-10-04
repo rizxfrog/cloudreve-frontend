@@ -105,6 +105,7 @@ export enum QueueType {
   RECYCLE = "recycle",
   THUMB = "thumb",
   REMOTE_DOWNLOAD = "remote_download",
+  MODELSCOPE_COMMIT = "modelscope_commit",
 }
 
 export interface QueueMetric {
@@ -247,6 +248,12 @@ export interface PolicySetting {
   modelscope_repo_type?: string;
   modelscope_revision?: string;
   modelscope_namespace?: string;
+  modelscope_queue_commit?: boolean;
+  modelscope_commit_interval_min?: number;
+  modelscope_commit_interval_max?: number;
+  modelscope_batch_commit?: boolean;
+  modelscope_batch_window_min?: number;
+  modelscope_batch_window_max?: number;
 }
 
 export interface User extends CommonMixin {

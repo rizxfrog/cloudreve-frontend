@@ -155,7 +155,9 @@
     "maxRetry": "最大重試次數",
     "maxRetryDes": "任務失敗後的最大重試次數。",
     "retryDelay": "重試延遲",
-    "retryDelayDes": "任務重試的初始延遲時間（秒）。"
+    "retryDelayDes": "任務重試的初始延遲時間（秒）。",
+    "queueName_modelscope_commit": "魔搭提交",
+    "queueName_modelscope_commitDes": "用於排隊執行魔搭倉庫提交，並按隨機間隔錯開。"
   },
   "settings": {
     "headlessFooter": "登入會話頁面底部",
@@ -1152,7 +1154,20 @@
     "modelscopeRepoType": "倉庫類型",
     "modelscopeNamespace": "命名空間",
     "modelscopeRevision": "修訂版本",
-    "encryptedFile": "加密的檔案"
+    "encryptedFile": "加密的檔案",
+    "modelscopeQueueCommit": "排隊提交",
+    "modelscopeQueueCommitDes": "ModelScope 不允許提交時間間隔太短。開啟後，該倉庫的提交會透過專用佇列逐個排隊執行，並按隨機間隔錯開。",
+    "modelscopeCommitIntervalMin": "最小間隔（秒）",
+    "modelscopeCommitIntervalMax": "最大間隔（秒）",
+    "modelscopeCommitIntervalDes": "相鄰兩次提交之間的隨機延遲（秒），例如 3 和 5 表示隨機等待 3～5 秒。留空則使用預設的 3～5 秒。",
+    "modelscopeCommitModeImmediate": "直接提交（不排隊、不合併）",
+    "modelscopeCommitModeImmediateDes": "每次提交立即寫入。倉庫允許連續提交時使用。",
+    "modelscopeBatchCommit": "視窗合併提交",
+    "modelscopeBatchCommitDes": "開啟後，在隨機時間視窗內到達的提交會合併為一次倉庫提交寫入。適合短時間內的多個上傳，提交次數遠少於排隊模式。",
+    "modelscopeCommitModeExclusive": "排隊提交與視窗合併提交互斥，只能選擇其中一種。",
+    "modelscopeBatchWindowMin": "最小視窗（秒）",
+    "modelscopeBatchWindowMax": "最大視窗（秒）",
+    "modelscopeBatchWindowDes": "每次合併視窗的隨機時長（秒），例如 3 和 5 表示隨機等待 3～5 秒。視窗內到達的提交會在視窗結束後合併為一次提交寫入。留空則使用預設的 3～5 秒。"
   },
   "node": {
     "slave": "從機",

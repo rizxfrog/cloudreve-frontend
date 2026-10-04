@@ -155,7 +155,9 @@
     "maxRetry": "الحد الأقصى لعدد المحاولات",
     "maxRetryDes": "الحد الأقصى لعدد مرات إعادة المحاولة بعد فشل المهمة.",
     "retryDelay": "تأخير إعادة المحاولة",
-    "retryDelayDes": "وقت التأخير الأولي (بالثواني) عند إعادة محاولة المهمة."
+    "retryDelayDes": "وقت التأخير الأولي (بالثواني) عند إعادة محاولة المهمة.",
+    "queueName_modelscope_commit": "ModelScope Commits",
+    "queueName_modelscope_commitDes": "Serializes ModelScope repository commits and spaces them by a random interval."
   },
   "settings": {
     "headlessFooter": "تذييل صفحة الهبوط",
@@ -1152,7 +1154,20 @@
     "modelscopeRepoType": "نوع المستودع",
     "modelscopeNamespace": "مساحة الاسم",
     "modelscopeRevision": "المراجعة",
-    "encryptedFile": "الملفات المشفرة"
+    "encryptedFile": "الملفات المشفرة",
+    "modelscopeQueueCommit": "Queue commits",
+    "modelscopeQueueCommitDes": "ModelScope rejects commits that follow each other too closely. When enabled, this repository's commits run one at a time through a dedicated queue and are spaced by a random interval.",
+    "modelscopeCommitIntervalMin": "Minimum interval (seconds)",
+    "modelscopeCommitIntervalMax": "Maximum interval (seconds)",
+    "modelscopeCommitIntervalDes": "Random delay inserted between consecutive commits, in seconds. For example 3 and 5 wait a random 3-5 seconds. Leave blank for the default 3-5 seconds.",
+    "modelscopeCommitModeImmediate": "Commit immediately",
+    "modelscopeCommitModeImmediateDes": "Every commit is written as it happens. Use this when the repository accepts consecutive commits.",
+    "modelscopeBatchCommit": "Merge commits in a window",
+    "modelscopeBatchCommitDes": "When enabled, the commits arriving inside a random time window are merged into a single repository commit. This suits short bursts of uploads and costs far fewer commits than the queued mode.",
+    "modelscopeCommitModeExclusive": "Queued commits and windowed merges are mutually exclusive; only one can be selected.",
+    "modelscopeBatchWindowMin": "Minimum window (seconds)",
+    "modelscopeBatchWindowMax": "Maximum window (seconds)",
+    "modelscopeBatchWindowDes": "Random length of each merge window, in seconds. For example 3 and 5 merge over a random 3-5 seconds. Commits arriving in the window are written as one commit when it closes. Leave blank for the default 3-5 seconds."
   },
   "node": {
     "slave": "تابعة",
@@ -1199,7 +1214,6 @@
     "allowedHostsDes": "أسماء المضيفين أو عناوين IP المحددة (واحدة في كل سطر) التي يحق لها تجاوز التحقق من سلامة الرابط على هذه العقدة. يتم السماح دائمًا بأسماء المضيفات الخاصة بالموقع. استخدم هذه الميزة لإدراج اسم مضيف داخلي معين في القائمة البيضاء، بحيث يسمح للمستخدمين بالتنزيل منه.",
     "allowedCIDRs": "نطاقات عناوين IP المسموح بها (CIDR)",
     "allowedCIDRsDes": "كتل CIDR (واحدة في كل سطر، IPv4 أو IPv6) التي يتم معاملة عناوين IP الخاصة بها على أنها آمنة حتى لو كان من المفترض رفضها عادةً. استخدم هذه الميزة لعرض شبكة فرعية LAN — على سبيل المثال جهاز NAS على 192.168.10.0/24 — دون تعطيل بقية إجراءات الفحص الأمني.",
-    "webUIEndpoint": "نقطة نهاية Web UI",
     "webUIEndpointDes": "نقطة نهاية Web UI لـ qBittorrent، مثل <0>http://127.0.0.1:8080/</0>.",
     "tempPath": "مجلد التنزيل المؤقت",
     "tempPathDes": "المجلد على العقدة الذي يستخدمه Aria2 كمجلد تنزيل مؤقت. تحتاج عملية Cloudreve على العقدة إلى أذونات القراءة والكتابة والتنفيذ على هذا المجلد، ويجب أن يتمكن برنامج التنزيل أيضًا من الوصول إليه. اتركه فارغًا لاستخدام مسار الملفات المؤقتة الافتراضي.",

@@ -9,6 +9,7 @@ import { SquareMenuItem } from "../../../../FileManager/ContextMenu/ContextMenu"
 import { EndpointInput } from "../../../Common/EndpointInput";
 import { NoMarginHelperText } from "../../../Settings/Settings";
 import { AddWizardProps } from "../../AddWizardDialog";
+import ModelScopeCommitMode from "./ModelScopeCommitMode";
 
 const ModelScopeWizard = ({ onSubmit }: AddWizardProps) => {
   const { t } = useTranslation("dashboard");
@@ -144,6 +145,11 @@ const ModelScopeWizard = ({ onSubmit }: AddWizardProps) => {
             }
           />
         </SettingForm>
+        <ModelScopeCommitMode
+          lgWidth={12}
+          settings={policy.settings}
+          onChange={(patch) => setPolicy({ ...policy, settings: { ...policy.settings, ...patch } })}
+        />
       </Stack>
       <Button variant="contained" color="primary" sx={{ mt: 2 }} onClick={handleSubmit}>
         {t("policy.create")}

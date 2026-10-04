@@ -155,7 +155,9 @@
     "maxRetry": "最大再試行回数",
     "maxRetryDes": "タスク失敗時の最大再試行回数",
     "retryDelay": "再試行遅延",
-    "retryDelayDes": "タスク再試行の初期遅延時間（秒）"
+    "retryDelayDes": "タスク再試行の初期遅延時間（秒）",
+    "queueName_modelscope_commit": "ModelScope Commits",
+    "queueName_modelscope_commitDes": "Serializes ModelScope repository commits and spaces them by a random interval."
   },
   "settings": {
     "headlessFooter": "ログインセッションページの下部",
@@ -1152,7 +1154,20 @@
     "modelscopeRepoType": "リポジトリ種別",
     "modelscopeNamespace": "名前空間",
     "modelscopeRevision": "リビジョン",
-    "encryptedFile": "暗号化されたファイル"
+    "encryptedFile": "暗号化されたファイル",
+    "modelscopeQueueCommit": "Queue commits",
+    "modelscopeQueueCommitDes": "ModelScope rejects commits that follow each other too closely. When enabled, this repository's commits run one at a time through a dedicated queue and are spaced by a random interval.",
+    "modelscopeCommitIntervalMin": "Minimum interval (seconds)",
+    "modelscopeCommitIntervalMax": "Maximum interval (seconds)",
+    "modelscopeCommitIntervalDes": "Random delay inserted between consecutive commits, in seconds. For example 3 and 5 wait a random 3-5 seconds. Leave blank for the default 3-5 seconds.",
+    "modelscopeCommitModeImmediate": "Commit immediately",
+    "modelscopeCommitModeImmediateDes": "Every commit is written as it happens. Use this when the repository accepts consecutive commits.",
+    "modelscopeBatchCommit": "Merge commits in a window",
+    "modelscopeBatchCommitDes": "When enabled, the commits arriving inside a random time window are merged into a single repository commit. This suits short bursts of uploads and costs far fewer commits than the queued mode.",
+    "modelscopeCommitModeExclusive": "Queued commits and windowed merges are mutually exclusive; only one can be selected.",
+    "modelscopeBatchWindowMin": "Minimum window (seconds)",
+    "modelscopeBatchWindowMax": "Maximum window (seconds)",
+    "modelscopeBatchWindowDes": "Random length of each merge window, in seconds. For example 3 and 5 merge over a random 3-5 seconds. Commits arriving in the window are written as one commit when it closes. Leave blank for the default 3-5 seconds."
   },
   "node": {
     "slave": "スレーブ",
