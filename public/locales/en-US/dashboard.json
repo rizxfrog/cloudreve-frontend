@@ -44,7 +44,8 @@
     "customProps": "Custom properties",
     "fullTextSearch": "Full-text search",
     "abuseReport": "Abuse report",
-    "oauthClients": "OAuth Apps"
+    "oauthClients": "OAuth Apps",
+    "bulkMail": "Bulk mail"
   },
   "oauth": {
     "oauthClients": "OAuth Apps",
@@ -1569,7 +1570,8 @@
     "finished": "Finished",
     "canceled": "Canceled/Stopped",
     "unknown": "Unknown",
-    "errorMsg": "Error message"
+    "errorMsg": "Error message",
+    "bulkMail": "Bulk mail: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "Trade No.",
@@ -1779,5 +1781,52 @@
     "reportedUserID": "Reported user ID",
     "shareID": "Shared ID",
     "reason": "Reason"
+  },
+  "bulkMail": {
+    "title": "Bulk mail",
+    "description": "Send a message to users selected by group, status, email or email domain. The message is rendered per recipient and delivered through the configured SMTP server.",
+    "recipients": "Recipients",
+    "recipientsDes": "Leave a field empty to include everyone it could match.",
+    "filterGroups": "User groups",
+    "allGroups": "All groups",
+    "filterStatuses": "Account status",
+    "allStatuses": "All statuses",
+    "filterNick": "Nickname contains",
+    "nickPlaceholder": "Any nickname",
+    "filterEmail": "Email contains",
+    "emailPlaceholder": "Any email address",
+    "filterSuffixes": "Email domains",
+    "suffixPlaceholder": "Type a domain and press Enter",
+    "suffixHelper": "Only users whose address ends with one of these domains. Case is ignored.",
+    "audience": "Audience",
+    "matched": "matched",
+    "willReceive": "will receive",
+    "skipped": "cannot receive",
+    "noRecipients": "No user matches the current filter.",
+    "sample": "Showing {{count}} of the matching recipients",
+    "sampleNick": "Nickname",
+    "sampleEmail": "Email",
+    "sampleGroup": "Group",
+    "message": "Message",
+    "variables": "Available variables",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject line",
+    "body": "Body",
+    "bodyHelper": "Rendered as HTML, so you can use markup. Variables are replaced for each recipient.",
+    "send": "Send",
+    "confirmTitle": "Send this message?",
+    "confirmSend": "Send",
+    "confirmMessage": "This will send <0>{{count}}</0> email(s). Delivery continues in the background and cannot be recalled.",
+    "undeliverableNotice": "{{count}} recipient(s) have no usable address and will be skipped.",
+    "queuedNotice": "Queued for {{count}} recipient(s).",
+    "viewTask": "View task",
+    "varSiteName": "Site name",
+    "varSiteTitle": "Site title",
+    "varSiteDescription": "Site description",
+    "varSiteUrl": "Site URL",
+    "varLogoNormal": "Logo URL (light theme)",
+    "varLogoLight": "Logo URL (dark theme)",
+    "varUserNick": "Recipient nickname",
+    "varUserEmail": "Recipient email address"
   }
 }

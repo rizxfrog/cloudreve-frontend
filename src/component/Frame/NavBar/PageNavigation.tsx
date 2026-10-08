@@ -22,6 +22,8 @@ import DataHistogramFilled from "../../Icons/DataHistogramFilled.tsx";
 import Folder from "../../Icons/Folder.tsx";
 import FolderOutlined from "../../Icons/FolderOutlined.tsx";
 import HomeOutlined from "../../Icons/HomeOutlined.tsx";
+import MailFilled from "../../Icons/MailFilled.tsx";
+import MailOutlined from "../../Icons/MailOutlined.tsx";
 import Payment from "../../Icons/Payment.tsx";
 import PaymentFilled from "../../Icons/PaymentFilled.tsx";
 import People from "../../Icons/People.tsx";
@@ -186,6 +188,11 @@ AdminNavigationItems = [
     label: "dashboard:nav.users",
     icon: [Person, PersonOutlined],
     path: "/admin/user",
+  },
+  {
+    label: "dashboard:nav.bulkMail",
+    icon: [MailFilled, MailOutlined],
+    path: "/admin/mail",
   },
   {
     label: "dashboard:nav.files",

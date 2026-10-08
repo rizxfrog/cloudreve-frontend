@@ -44,7 +44,8 @@
     "customProps": "Benutzerdefinierte Eigenschaften",
     "fullTextSearch": "Volltextsuche",
     "abuseReport": "Missbrauchsmeldung",
-    "oauthClients": "OAuth-Apps"
+    "oauthClients": "OAuth-Apps",
+    "bulkMail": "Massenmail"
   },
   "oauth": {
     "oauthClients": "OAuth-Apps",
@@ -1574,7 +1575,8 @@
     "finished": "Abgeschlossen",
     "canceled": "Abgebrochen/Gestoppt",
     "unknown": "Unbekannt",
-    "errorMsg": "Fehlermeldung"
+    "errorMsg": "Fehlermeldung",
+    "bulkMail": "Massenmail: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "Handels-Nr.",
@@ -1768,5 +1770,52 @@
     "reportedUserID": "Gemeldete Benutzer-ID",
     "shareID": "Freigabe-ID",
     "reason": "Grund"
+  },
+  "bulkMail": {
+    "title": "Massenmail",
+    "description": "Senden Sie eine Nachricht an Nutzer, die nach Gruppe, Status, E-Mail oder Domain gefiltert sind. Die Nachricht wird pro Empfänger gerendert und über den konfigurierten SMTP-Server zugestellt.",
+    "recipients": "Empfänger",
+    "recipientsDes": "Leere Felder schränken nicht ein.",
+    "filterGroups": "Nutzergruppen",
+    "allGroups": "Alle Gruppen",
+    "filterStatuses": "Kontostatus",
+    "allStatuses": "Alle Status",
+    "filterNick": "Nickname enthält",
+    "nickPlaceholder": "Beliebiger Nickname",
+    "filterEmail": "E-Mail enthält",
+    "emailPlaceholder": "Beliebige E-Mail",
+    "filterSuffixes": "E-Mail-Domains",
+    "suffixPlaceholder": "Domain eingeben und Enter drücken",
+    "suffixHelper": "Nur Nutzer, deren Adresse auf eine dieser Domains endet. Groß-/Kleinschreibung wird ignoriert.",
+    "audience": "Zielgruppe",
+    "matched": "Treffer",
+    "willReceive": "erhalten",
+    "skipped": "nicht zustellbar",
+    "noRecipients": "Kein Nutzer entspricht dem aktuellen Filter.",
+    "sample": "{{count}} passende Empfänger werden angezeigt",
+    "sampleNick": "Nickname",
+    "sampleEmail": "E-Mail",
+    "sampleGroup": "Gruppe",
+    "message": "Nachricht",
+    "variables": "Verfügbare Variablen",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Betreffzeile",
+    "body": "Inhalt",
+    "bodyHelper": "Wird als HTML gerendert, Markup ist also möglich. Variablen werden pro Empfänger ersetzt.",
+    "send": "Senden",
+    "confirmTitle": "Nachricht senden?",
+    "confirmSend": "Senden",
+    "confirmMessage": "Es werden <0>{{count}}</0> E-Mails gesendet. Der Versand läuft im Hintergrund weiter und kann nicht zurückgenommen werden.",
+    "undeliverableNotice": "{{count}} Empfänger haben keine nutzbare Adresse und werden übersprungen.",
+    "queuedNotice": "Für {{count}} Empfänger eingereiht.",
+    "viewTask": "Task anzeigen",
+    "varSiteName": "Seitenname",
+    "varSiteTitle": "Seitentitel",
+    "varSiteDescription": "Seitenbeschreibung",
+    "varSiteUrl": "Seiten-URL",
+    "varLogoNormal": "Logo-URL (hell)",
+    "varLogoLight": "Logo-URL (dunkel)",
+    "varUserNick": "Nickname des Empfängers",
+    "varUserEmail": "E-Mail des Empfängers"
   }
 }

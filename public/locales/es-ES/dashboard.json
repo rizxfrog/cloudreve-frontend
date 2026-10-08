@@ -44,7 +44,8 @@
     "customProps": "Propiedades personalizadas",
     "fullTextSearch": "Búsqueda de texto completo",
     "abuseReport": "Reporte de abuso",
-    "oauthClients": "Aplicaciones OAuth"
+    "oauthClients": "Aplicaciones OAuth",
+    "bulkMail": "Correo masivo"
   },
   "oauth": {
     "oauthClients": "Aplicaciones OAuth",
@@ -1567,7 +1568,8 @@
     "finished": "Finalizado",
     "canceled": "Cancelado/Detenido",
     "unknown": "Desconocido",
-    "errorMsg": "Mensaje de error"
+    "errorMsg": "Mensaje de error",
+    "bulkMail": "Correo masivo: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "No. de Transacción",
@@ -1777,5 +1779,52 @@
     "reportedUserID": "ID del usuario reportado",
     "shareID": "ID",
     "reason": "Razón"
+  },
+  "bulkMail": {
+    "title": "Correo masivo",
+    "description": "Envía un mensaje a los usuarios filtrados por grupo, estado, correo o dominio. El mensaje se genera para cada destinatario y se entrega mediante el servidor SMTP configurado.",
+    "recipients": "Destinatarios",
+    "recipientsDes": "Un campo vacío no aplica ningún filtro.",
+    "filterGroups": "Grupos de usuarios",
+    "allGroups": "Todos los grupos",
+    "filterStatuses": "Estado de la cuenta",
+    "allStatuses": "Todos los estados",
+    "filterNick": "El apodo contiene",
+    "nickPlaceholder": "Cualquier apodo",
+    "filterEmail": "El correo contiene",
+    "emailPlaceholder": "Cualquier correo",
+    "filterSuffixes": "Dominios de correo",
+    "suffixPlaceholder": "Escribe un dominio y pulsa Enter",
+    "suffixHelper": "Solo los usuarios cuya dirección termina en uno de estos dominios. No distingue mayúsculas.",
+    "audience": "Audiencia",
+    "matched": "coinciden",
+    "willReceive": "recibirán",
+    "skipped": "no recibirán",
+    "noRecipients": "Ningún usuario coincide con el filtro actual.",
+    "sample": "Mostrando {{count}} destinatarios coincidentes",
+    "sampleNick": "Apodo",
+    "sampleEmail": "Correo",
+    "sampleGroup": "Grupo",
+    "message": "Mensaje",
+    "variables": "Variables disponibles",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Línea de asunto",
+    "body": "Cuerpo",
+    "bodyHelper": "Se renderiza como HTML, por lo que puedes usar etiquetas. Las variables se sustituyen para cada destinatario.",
+    "send": "Enviar",
+    "confirmTitle": "¿Enviar este mensaje?",
+    "confirmSend": "Enviar",
+    "confirmMessage": "Se enviarán <0>{{count}}</0> correo(s). El envío continúa en segundo plano y no se puede cancelar.",
+    "undeliverableNotice": "{{count}} destinatario(s) no tienen una dirección válida y se omitirán.",
+    "queuedNotice": "En cola para {{count}} destinatario(s).",
+    "viewTask": "Ver tarea",
+    "varSiteName": "Nombre del sitio",
+    "varSiteTitle": "Título del sitio",
+    "varSiteDescription": "Descripción del sitio",
+    "varSiteUrl": "URL del sitio",
+    "varLogoNormal": "URL del logo (claro)",
+    "varLogoLight": "URL del logo (oscuro)",
+    "varUserNick": "Apodo del destinatario",
+    "varUserEmail": "Correo del destinatario"
   }
 }

@@ -44,7 +44,8 @@
     "customProps": "خصائص إضافية",
     "fullTextSearch": "البحث النصي الكامل",
     "abuseReport": "الإبلاغ عن إساءة الاستخدام",
-    "oauthClients": "تطبيقات OAuth"
+    "oauthClients": "تطبيقات OAuth",
+    "bulkMail": "البريد الجماعي"
   },
   "oauth": {
     "oauthClients": "تطبيقات OAuth",
@@ -1568,7 +1569,8 @@
     "finished": "انتهى",
     "canceled": "ملغى/موقوف",
     "unknown": "غير معروف",
-    "errorMsg": "رسالة الخطأ"
+    "errorMsg": "رسالة الخطأ",
+    "bulkMail": "البريد الجماعي: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "رقم المعاملة",
@@ -1778,5 +1780,52 @@
     "reportedUserID": "معرف المستخدم المُبلغ عنه",
     "shareID": "معرف المشاركة",
     "reason": "السبب"
+  },
+  "bulkMail": {
+    "title": "البريد الجماعي",
+    "description": "أرسل رسالة إلى المستخدمين المحددين حسب المجموعة أو الحالة أو البريد أو النطاق. تُصاغ الرسالة لكل مستلم على حدة وتُرسل عبر خادم SMTP المُهيأ.",
+    "recipients": "المستلمون",
+    "recipientsDes": "الحقل الفارغ لا يقيّد النتائج.",
+    "filterGroups": "مجموعات المستخدمين",
+    "allGroups": "كل المجموعات",
+    "filterStatuses": "حالة الحساب",
+    "allStatuses": "كل الحالات",
+    "filterNick": "يحتوي الاسم على",
+    "nickPlaceholder": "أي اسم",
+    "filterEmail": "يحتوي البريد على",
+    "emailPlaceholder": "أي بريد",
+    "filterSuffixes": "نطاقات البريد",
+    "suffixPlaceholder": "اكتب النطاق ثم اضغط Enter",
+    "suffixHelper": "المستخدمون الذين ينتهي بريدهم بأحد هذه النطاقات فقط. لا يُفرَّق بين حالة الأحرف.",
+    "audience": "الجمهور",
+    "matched": "مطابق",
+    "willReceive": "سيستلم",
+    "skipped": "لا يستلم",
+    "noRecipients": "لا يوجد مستخدم يطابق التصفية الحالية.",
+    "sample": "عرض {{count}} من المستلمين المطابقين",
+    "sampleNick": "الاسم",
+    "sampleEmail": "البريد",
+    "sampleGroup": "المجموعة",
+    "message": "الرسالة",
+    "variables": "المتغيرات المتاحة",
+    "subject": "الموضوع",
+    "subjectPlaceholder": "سطر الموضوع",
+    "body": "المحتوى",
+    "bodyHelper": "يُعرض بصيغة HTML لذا يمكن استخدام الوسوم. تُستبدل المتغيرات لكل مستلم.",
+    "send": "إرسال",
+    "confirmTitle": "إرسال هذه الرسالة؟",
+    "confirmSend": "إرسال",
+    "confirmMessage": "سيتم إرسال <0>{{count}}</0> رسالة. تستمر عملية الإرسال في الخلفية ولا يمكن التراجع عنها.",
+    "undeliverableNotice": "{{count}} مستلمًا بلا عنوان صالح وسيتم تخطيهم.",
+    "queuedNotice": "تمت الجدولة إلى {{count}} مستلمًا.",
+    "viewTask": "عرض المهمة",
+    "varSiteName": "اسم الموقع",
+    "varSiteTitle": "عنوان الموقع",
+    "varSiteDescription": "وصف الموقع",
+    "varSiteUrl": "رابط الموقع",
+    "varLogoNormal": "رابط الشعار (فاتح)",
+    "varLogoLight": "رابط الشعار (داكن)",
+    "varUserNick": "اسم المستلم",
+    "varUserEmail": "بريد المستلم"
   }
 }

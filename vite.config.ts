@@ -1,10 +1,43 @@
 import react from "@vitejs/plugin-react-swc";
-import { promises as fs } from "fs";
+import { createHash } from "crypto";
+import { promises as fs, readdirSync, readFileSync } from "fs";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 // import mkcert from "vite-plugin-mkcert";
 import { VitePWA } from "vite-plugin-pwa";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+
+// __ASSETS_VERSION__ identifies the translations this build serves: it is the
+// digest of the locale files, not the release number.
+//
+// It versions the browser's i18next cache, which otherwise answers a namespace
+// from localStorage for its whole expirationTime. A release number would not be
+// enough, because package.json is routinely left alone across a local rebuild:
+// the digest changes exactly when the translations do, so a rebuild that adds
+// keys invalidates the cached copy while an identical rebuild keeps it.
+const LOCALE_VERSION = (() => {
+  const dir = resolve(__dirname, "public/locales");
+  const files: string[] = [];
+  const walk = (d: string) => {
+    // Sorted so the same content always yields the same digest.
+    for (const e of readdirSync(d, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const p = resolve(d, e.name);
+      if (e.isDirectory()) {
+        walk(p);
+      } else {
+        files.push(p);
+      }
+    }
+  };
+  walk(dir);
+
+  const hash = createHash("sha256");
+  for (const p of files) {
+    hash.update(p.slice(dir.length));
+    hash.update(readFileSync(p));
+  }
+  return hash.digest("hex").slice(0, 16);
+})();
 
 const backend = "http://localhost:5212";
 const backendProxyOption = { target: backend, headers: { host: new URL(backend).host } };
@@ -86,7 +119,7 @@ export default defineConfig({
     // }),
   ],
   define: {
-    __ASSETS_VERSION__: JSON.stringify(process.env.npm_package_version),
+    __ASSETS_VERSION__: JSON.stringify(LOCALE_VERSION),
   },
   build: {
     outDir: "build", // keep same as v3 with minimal changes

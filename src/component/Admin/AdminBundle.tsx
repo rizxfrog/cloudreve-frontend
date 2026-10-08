@@ -4,6 +4,7 @@ import FileSystem from "./FileSystem/Filesystem";
 import EditGroup from "./Group/EditGroup/EditGroup";
 import GroupSetting from "./Group/GroupSetting";
 import Home from "./Home/Home";
+import BulkMail from "./Mail/BulkMail";
 import EditNode from "./Node/EditNode";
 import NodeSetting from "./Node/NodeSetting";
 import EditOAuthClient from "./OAuthClient/EditOAuthClient/EditOAuthClient";
@@ -26,6 +27,7 @@ export {
   FileSystem,
   GroupSetting,
   Home,
+  BulkMail,
   NodeSetting,
   OAuthClientSetting,
   OauthCallback,

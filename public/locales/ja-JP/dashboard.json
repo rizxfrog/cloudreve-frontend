@@ -44,7 +44,8 @@
     "customProps": "カスタムプロパティ",
     "fullTextSearch": "全文検索",
     "abuseReport": "不正利用報告",
-    "oauthClients": "OAuth アプリ"
+    "oauthClients": "OAuth アプリ",
+    "bulkMail": "一斉メール"
   },
   "oauth": {
     "oauthClients": "OAuth アプリ",
@@ -1569,7 +1570,8 @@
     "finished": "完了",
     "canceled": "キャンセル/停止",
     "unknown": "不明",
-    "errorMsg": "エラーメッセージ"
+    "errorMsg": "エラーメッセージ",
+    "bulkMail": "一斉メール：{{title}}（{{queued}}/{{total}}）"
   },
   "payment": {
     "tradeNo": "取引番号",
@@ -1779,5 +1781,52 @@
     "reportedUserID": "舉報対象ユーザー ID",
     "shareID": "共有 ID",
     "reason": "原因"
+  },
+  "bulkMail": {
+    "title": "一斉メール",
+    "description": "ユーザーグループ、アカウント状態、メールアドレス、ドメインで宛先を絞り込み、メールを送信します。本文は宛先ごとに描画され、設定済みの SMTP サーバーから送信されます。",
+    "recipients": "宛先",
+    "recipientsDes": "空欄の項目は絞り込みに使用しません。",
+    "filterGroups": "ユーザーグループ",
+    "allGroups": "すべてのグループ",
+    "filterStatuses": "アカウント状態",
+    "allStatuses": "すべての状態",
+    "filterNick": "ニックネームに含む",
+    "nickPlaceholder": "指定なし",
+    "filterEmail": "メールアドレスに含む",
+    "emailPlaceholder": "指定なし",
+    "filterSuffixes": "メールドメイン",
+    "suffixPlaceholder": "ドメインを入力して Enter",
+    "suffixHelper": "アドレスがこのドメインで終わるユーザーのみ対象。大文字小文字は区別しません。",
+    "audience": "対象の確認",
+    "matched": "該当ユーザー",
+    "willReceive": "送信対象",
+    "skipped": "送信不可",
+    "noRecipients": "現在の条件に該当するユーザーはいません。",
+    "sample": "該当する宛先のうち {{count}} 件を表示",
+    "sampleNick": "ニックネーム",
+    "sampleEmail": "メールアドレス",
+    "sampleGroup": "グループ",
+    "message": "本文",
+    "variables": "使用できる変数",
+    "subject": "件名",
+    "subjectPlaceholder": "メール件名",
+    "body": "本文",
+    "bodyHelper": "本文は HTML として描画されるため、タグを使用できます。変数は宛先ごとに置換されます。",
+    "send": "送信",
+    "confirmTitle": "送信しますか？",
+    "confirmSend": "送信",
+    "confirmMessage": "<0>{{count}}</0> 件のメールを送信します。送信はバックグラウンドで継続され、取り消せません。",
+    "undeliverableNotice": "{{count}} 件の宛先は有効なアドレスがないためスキップされます。",
+    "queuedNotice": "{{count}} 件の宛先へ送信を登録しました。",
+    "viewTask": "タスクを表示",
+    "varSiteName": "サイト名",
+    "varSiteTitle": "サイトタイトル",
+    "varSiteDescription": "サイト説明",
+    "varSiteUrl": "サイト URL",
+    "varLogoNormal": "ロゴ URL（ライト）",
+    "varLogoLight": "ロゴ URL（ダーク）",
+    "varUserNick": "宛先のニックネーム",
+    "varUserEmail": "宛先のメールアドレス"
   }
 }

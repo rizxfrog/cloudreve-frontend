@@ -39,6 +39,10 @@ export interface TaskSummary {
     failed?: number;
     total?: number;
     download?: DownloadTaskStatus;
+    // Bulk mail summary.
+    title?: string;
+    queued?: number;
+    skipped?: number;
   };
 }
 
@@ -138,6 +142,7 @@ export enum TaskType {
   full_text_change_owner = "full_text_change_owner",
   full_text_delete = "full_text_delete",
   full_text_rebuild = "full_text_rebuild",
+  bulk_mail = "bulk_mail",
 }
 
 export enum TaskStatus {

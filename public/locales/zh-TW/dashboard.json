@@ -44,7 +44,8 @@
     "customProps": "自定義屬性",
     "fullTextSearch": "全文搜尋",
     "abuseReport": "濫用舉報",
-    "oauthClients": "OAuth 應用程式"
+    "oauthClients": "OAuth 應用程式",
+    "bulkMail": "郵件群發"
   },
   "oauth": {
     "oauthClients": "OAuth 應用程式",
@@ -1569,7 +1570,8 @@
     "finished": "完成",
     "canceled": "取消/停止",
     "unknown": "未知",
-    "errorMsg": "錯誤資訊"
+    "errorMsg": "錯誤資訊",
+    "bulkMail": "郵件群發：{{title}}（{{queued}}/{{total}}）"
   },
   "payment": {
     "tradeNo": "交易單號",
@@ -1779,5 +1781,52 @@
     "reportedUserID": "舉報對象使用者 ID",
     "shareID": "分享 ID",
     "reason": "原因"
+  },
+  "bulkMail": {
+    "title": "郵件群發",
+    "description": "依使用者群組、帳號狀態、信箱或信箱網域篩選收件者並寄送郵件。郵件會針對每位收件者個別渲染，並透過已設定的 SMTP 伺服器寄送。",
+    "recipients": "收件者",
+    "recipientsDes": "留空的篩選條件不參與過濾。",
+    "filterGroups": "使用者群組",
+    "allGroups": "全部群組",
+    "filterStatuses": "帳號狀態",
+    "allStatuses": "全部狀態",
+    "filterNick": "暱稱包含",
+    "nickPlaceholder": "不限暱稱",
+    "filterEmail": "信箱包含",
+    "emailPlaceholder": "不限信箱",
+    "filterSuffixes": "信箱網域",
+    "suffixPlaceholder": "輸入網域後按 Enter",
+    "suffixHelper": "僅比對信箱以此網域結尾的使用者，不分大小寫。",
+    "audience": "比對結果",
+    "matched": "符合使用者",
+    "willReceive": "將收到郵件",
+    "skipped": "無法接收",
+    "noRecipients": "目前篩選條件沒有符合的使用者。",
+    "sample": "顯示 {{count}} 位符合的收件者",
+    "sampleNick": "暱稱",
+    "sampleEmail": "信箱",
+    "sampleGroup": "群組",
+    "message": "郵件內容",
+    "variables": "可用變數",
+    "subject": "主旨",
+    "subjectPlaceholder": "郵件主旨",
+    "body": "內文",
+    "bodyHelper": "內文以 HTML 渲染，可使用標籤。變數會針對每位收件者分別替換。",
+    "send": "寄送",
+    "confirmTitle": "確認寄送？",
+    "confirmSend": "寄送",
+    "confirmMessage": "將寄送給 <0>{{count}}</0> 位使用者。寄送於背景繼續，且無法撤回。",
+    "undeliverableNotice": "有 {{count}} 位收件者沒有可用的信箱，將被略過。",
+    "queuedNotice": "已排入寄送給 {{count}} 位收件者。",
+    "viewTask": "檢視任務",
+    "varSiteName": "站點名稱",
+    "varSiteTitle": "站點標題",
+    "varSiteDescription": "站點描述",
+    "varSiteUrl": "站點網址",
+    "varLogoNormal": "Logo 網址（淺色主題）",
+    "varLogoLight": "Logo 網址（深色主題）",
+    "varUserNick": "收件者暱稱",
+    "varUserEmail": "收件者信箱"
   }
 }

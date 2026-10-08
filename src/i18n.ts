@@ -25,12 +25,23 @@ i18n
     },
     backend: {
       backends: process.env.NODE_ENV === "development" ? [Backend] : [LocalStorageBackend, Backend],
-      backendOptions: [
-        {
-          expirationTime: 7 * 24 * 60 * 60 * 1000, // 7 days
-          loadPath: "/locales/{{lng}}/{{ns}}.json",
-        },
-      ],
+      // backendOptions[i] configures backends[i].
+      backendOptions:
+        process.env.NODE_ENV === "development"
+          ? [{ loadPath: "/locales/{{lng}}/{{ns}}.json" }]
+          : [
+              {
+                // A copy of a namespace is only reused while it was written by
+                // the build that is running. Without this the cache answers for
+                // its whole expirationTime, so a deployment that adds keys keeps
+                // serving the previous copy until the entry expires: the new
+                // strings render as their raw path -- "bulkMail.title" -- while
+                // everything present in the older copy still looks translated.
+                getVersion: () => __ASSETS_VERSION__,
+                expirationTime: 7 * 24 * 60 * 60 * 1000, // 7 days
+              },
+              { loadPath: "/locales/{{lng}}/{{ns}}.json" },
+            ],
     },
   });
 

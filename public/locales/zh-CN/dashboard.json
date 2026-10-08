@@ -44,7 +44,8 @@
     "customProps": "自定义属性",
     "fullTextSearch": "全文搜索",
     "abuseReport": "滥用举报",
-    "oauthClients": "OAuth 应用"
+    "oauthClients": "OAuth 应用",
+    "bulkMail": "邮件群发"
   },
   "oauth": {
     "oauthClients": "OAuth 应用",
@@ -1568,7 +1569,8 @@
     "finished": "完成",
     "canceled": "取消/停止",
     "unknown": "未知",
-    "errorMsg": "错误信息"
+    "errorMsg": "错误信息",
+    "bulkMail": "邮件群发：{{title}}（{{queued}}/{{total}}）"
   },
   "payment": {
     "tradeNo": "交易单号",
@@ -1778,5 +1780,52 @@
     "reportedUserID": "举报对象用户 ID",
     "shareID": "分享 ID",
     "reason": "原因"
+  },
+  "bulkMail": {
+    "title": "邮件群发",
+    "description": "按用户组、账号状态、邮箱或邮箱域名筛选收件用户并发送邮件。邮件会针对每位收件人单独渲染，并通过已配置的 SMTP 服务器发送。",
+    "recipients": "收件人",
+    "recipientsDes": "留空的筛选条件不参与过滤。",
+    "filterGroups": "用户组",
+    "allGroups": "全部用户组",
+    "filterStatuses": "账号状态",
+    "allStatuses": "全部状态",
+    "filterNick": "昵称包含",
+    "nickPlaceholder": "不限昵称",
+    "filterEmail": "邮箱包含",
+    "emailPlaceholder": "不限邮箱",
+    "filterSuffixes": "邮箱域名",
+    "suffixPlaceholder": "输入域名后回车",
+    "suffixHelper": "仅匹配邮箱以此域名结尾的用户，不区分大小写。",
+    "audience": "匹配情况",
+    "matched": "匹配用户",
+    "willReceive": "将收到邮件",
+    "skipped": "无法接收",
+    "noRecipients": "当前筛选条件下没有匹配的用户。",
+    "sample": "显示 {{count}} 位匹配的收件人",
+    "sampleNick": "昵称",
+    "sampleEmail": "邮箱",
+    "sampleGroup": "用户组",
+    "message": "邮件内容",
+    "variables": "可用变量",
+    "subject": "主题",
+    "subjectPlaceholder": "邮件主题",
+    "body": "正文",
+    "bodyHelper": "正文按 HTML 渲染，可以使用标签。变量会针对每位收件人分别替换。",
+    "send": "发送",
+    "confirmTitle": "确认发送？",
+    "confirmSend": "发送",
+    "confirmMessage": "将向 <0>{{count}}</0> 位用户发送邮件。发送在后台继续，且无法撤回。",
+    "undeliverableNotice": "有 {{count}} 位收件人没有可用邮箱，将被跳过。",
+    "queuedNotice": "已提交发送给 {{count}} 位收件人。",
+    "viewTask": "查看任务",
+    "varSiteName": "站点名称",
+    "varSiteTitle": "站点标题",
+    "varSiteDescription": "站点描述",
+    "varSiteUrl": "站点地址",
+    "varLogoNormal": "Logo 地址（浅色主题）",
+    "varLogoLight": "Logo 地址（深色主题）",
+    "varUserNick": "收件人昵称",
+    "varUserEmail": "收件人邮箱"
   }
 }

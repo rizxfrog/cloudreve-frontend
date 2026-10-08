@@ -99,6 +99,48 @@ export interface TestSMTPService {
   };
 }
 
+export interface BulkMailFilter {
+  groups?: number[];
+  statuses?: string[];
+  nick?: string;
+  email?: string;
+  email_suffixes?: string[];
+}
+
+export interface BulkMailRecipientService extends BulkMailFilter {}
+
+export interface BulkMailRecipient {
+  id: number;
+  nick: string;
+  email: string;
+  status: string;
+  group: string;
+  hash_id: string;
+  deliverable: boolean;
+}
+
+export interface BulkMailRecipientPreview {
+  count: number;
+  undeliverable: number;
+  sample: BulkMailRecipient[];
+}
+
+export interface SendBulkMailService extends BulkMailFilter {
+  title: string;
+  body: string;
+  // confirm_recipients is the audience size the sender reviewed. The server
+  // refuses the send if the filter now matches more users than this.
+  confirm_recipients: number;
+}
+
+export interface SendBulkMailResponse {
+  task_id: string;
+  // recipients is how many addresses the task will deliver to, excluding
+  // accounts with no usable address. It matches the count shown in the
+  // confirmation dialog.
+  recipients: number;
+}
+
 export enum QueueType {
   IO_INTENSE = "io_intense",
   MEDIA_META = "media_meta",

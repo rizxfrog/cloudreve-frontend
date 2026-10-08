@@ -133,6 +133,12 @@ export const TaskContent = memo(({ task, openEntity, openFile }: TaskContentProp
         return t("task.fullTextDelete", {
           count: privateState?.file_ids?.length ?? 0,
         });
+      case TaskType.bulk_mail:
+        return t("task.bulkMail", {
+          title: task.summary?.props?.title ?? "",
+          queued: task.summary?.props?.queued ?? 0,
+          total: task.summary?.props?.total ?? 0,
+        });
       default:
         return "";
     }

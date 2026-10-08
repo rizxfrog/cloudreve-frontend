@@ -44,7 +44,8 @@
     "customProps": "Właściwości niestandardowe",
     "fullTextSearch": "Wyszukiwanie pełnotekstowe",
     "abuseReport": "Zgłoszenia nadużyć",
-    "oauthClients": "Aplikacje OAuth"
+    "oauthClients": "Aplikacje OAuth",
+    "bulkMail": "Masowa wysyłka"
   },
   "oauth": {
     "oauthClients": "Aplikacje OAuth",
@@ -1569,7 +1570,8 @@
     "finished": "Zakończone",
     "canceled": "Anulowane/Zatrzymane",
     "unknown": "Nieznane",
-    "errorMsg": "Komunikat błędu"
+    "errorMsg": "Komunikat błędu",
+    "bulkMail": "Masowa wysyłka: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "Nr transakcji",
@@ -1779,5 +1781,52 @@
     "reportedUserID": "ID Zgłoszonego użytkownika",
     "shareID": "ID Udostępnienia",
     "reason": "Powód"
+  },
+  "bulkMail": {
+    "title": "Masowa wysyłka",
+    "description": "Wyślij wiadomość do użytkowników filtrowanych według grupy, statusu, adresu lub domeny. Wiadomość jest generowana dla każdego odbiorcy i dostarczana przez skonfigurowany serwer SMTP.",
+    "recipients": "Odbiorcy",
+    "recipientsDes": "Puste pole nie zawęża wyników.",
+    "filterGroups": "Grupy użytkowników",
+    "allGroups": "Wszystkie grupy",
+    "filterStatuses": "Status konta",
+    "allStatuses": "Wszystkie statusy",
+    "filterNick": "Nick zawiera",
+    "nickPlaceholder": "Dowolny nick",
+    "filterEmail": "Adres zawiera",
+    "emailPlaceholder": "Dowolny adres",
+    "filterSuffixes": "Domeny e-mail",
+    "suffixPlaceholder": "Wpisz domenę i naciśnij Enter",
+    "suffixHelper": "Tylko użytkownicy, których adres kończy się na jedną z tych domen. Wielkość liter jest ignorowana.",
+    "audience": "Odbiorcy",
+    "matched": "pasujących",
+    "willReceive": "otrzyma",
+    "skipped": "nie otrzyma",
+    "noRecipients": "Żaden użytkownik nie pasuje do filtra.",
+    "sample": "Wyświetlono {{count}} pasujących odbiorców",
+    "sampleNick": "Nick",
+    "sampleEmail": "Adres",
+    "sampleGroup": "Grupa",
+    "message": "Wiadomość",
+    "variables": "Dostępne zmienne",
+    "subject": "Temat",
+    "subjectPlaceholder": "Wiersz tematu",
+    "body": "Treść",
+    "bodyHelper": "Renderowane jako HTML, więc znaczniki są dozwolone. Zmienne są podstawiane dla każdego odbiorcy.",
+    "send": "Wyślij",
+    "confirmTitle": "Wysłać tę wiadomość?",
+    "confirmSend": "Wyślij",
+    "confirmMessage": "Zostanie wysłanych <0>{{count}}</0> wiadomości. Wysyłka trwa w tle i nie można jej wycofać.",
+    "undeliverableNotice": "{{count}} odbiorców nie ma użytecznego adresu i zostanie pominiętych.",
+    "queuedNotice": "Zakolejkowano dla {{count}} odbiorców.",
+    "viewTask": "Zobacz zadanie",
+    "varSiteName": "Nazwa witryny",
+    "varSiteTitle": "Tytuł witryny",
+    "varSiteDescription": "Opis witryny",
+    "varSiteUrl": "URL witryny",
+    "varLogoNormal": "URL logo (jasny)",
+    "varLogoLight": "URL logo (ciemny)",
+    "varUserNick": "Nick odbiorcy",
+    "varUserEmail": "Adres odbiorcy"
   }
 }

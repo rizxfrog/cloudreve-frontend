@@ -44,7 +44,8 @@
     "customProps": "Proprietà personalizzate",
     "fullTextSearch": "Ricerca full-text",
     "abuseReport": "Segnalazione abusi",
-    "oauthClients": "App OAuth"
+    "oauthClients": "App OAuth",
+    "bulkMail": "Invio massivo"
   },
   "oauth": {
     "oauthClients": "App OAuth",
@@ -1566,7 +1567,8 @@
     "finished": "Finito",
     "canceled": "Annullato/Fermato",
     "unknown": "Sconosciuto",
-    "errorMsg": "Messaggio errore"
+    "errorMsg": "Messaggio errore",
+    "bulkMail": "Invio massivo: {{title}} ({{queued}}/{{total}})"
   },
   "payment": {
     "tradeNo": "N. Transazione",
@@ -1776,5 +1778,52 @@
     "reportedUserID": "ID utente segnalato",
     "shareID": "ID Condiviso",
     "reason": "Motivo"
+  },
+  "bulkMail": {
+    "title": "Invio massivo",
+    "description": "Invia un messaggio agli utenti filtrati per gruppo, stato, email o dominio. Il messaggio viene generato per ogni destinatario e consegnato tramite il server SMTP configurato.",
+    "recipients": "Destinatari",
+    "recipientsDes": "Un campo vuoto non applica alcun filtro.",
+    "filterGroups": "Gruppi utente",
+    "allGroups": "Tutti i gruppi",
+    "filterStatuses": "Stato dell'account",
+    "allStatuses": "Tutti gli stati",
+    "filterNick": "Il nickname contiene",
+    "nickPlaceholder": "Qualsiasi nickname",
+    "filterEmail": "L'email contiene",
+    "emailPlaceholder": "Qualsiasi email",
+    "filterSuffixes": "Domini email",
+    "suffixPlaceholder": "Digita un dominio e premi Invio",
+    "suffixHelper": "Solo gli utenti il cui indirizzo termina con uno di questi domini. Maiuscole ignorate.",
+    "audience": "Destinatari",
+    "matched": "corrispondenti",
+    "willReceive": "riceveranno",
+    "skipped": "non riceveranno",
+    "noRecipients": "Nessun utente corrisponde al filtro attuale.",
+    "sample": "Mostrati {{count}} destinatari corrispondenti",
+    "sampleNick": "Nickname",
+    "sampleEmail": "Email",
+    "sampleGroup": "Gruppo",
+    "message": "Messaggio",
+    "variables": "Variabili disponibili",
+    "subject": "Oggetto",
+    "subjectPlaceholder": "Riga dell'oggetto",
+    "body": "Corpo",
+    "bodyHelper": "Viene renderizzato come HTML, quindi puoi usare i tag. Le variabili sono sostituite per ogni destinatario.",
+    "send": "Invia",
+    "confirmTitle": "Inviare questo messaggio?",
+    "confirmSend": "Invia",
+    "confirmMessage": "Verranno inviate <0>{{count}}</0> email. L'invio prosegue in background e non può essere annullato.",
+    "undeliverableNotice": "{{count}} destinatari non hanno un indirizzo valido e verranno saltati.",
+    "queuedNotice": "In coda per {{count}} destinatari.",
+    "viewTask": "Vedi attività",
+    "varSiteName": "Nome del sito",
+    "varSiteTitle": "Titolo del sito",
+    "varSiteDescription": "Descrizione del sito",
+    "varSiteUrl": "URL del sito",
+    "varLogoNormal": "URL logo (chiaro)",
+    "varLogoLight": "URL logo (scuro)",
+    "varUserNick": "Nickname del destinatario",
+    "varUserEmail": "Email del destinatario"
   }
 }

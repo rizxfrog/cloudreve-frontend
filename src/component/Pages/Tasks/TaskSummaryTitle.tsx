@@ -116,6 +116,16 @@ const TaskSummaryTitle = ({ type, summary, isInDashboard = false }: TaskSummaryT
           })}
         </Typography>
       );
+    case TaskType.bulk_mail:
+      return (
+        <Typography variant={"inherit"}>
+          {t("task.bulkMail", {
+            title: summary?.props.title ?? "",
+            queued: summary?.props.queued ?? 0,
+            total: summary?.props.total ?? 0,
+          })}
+        </Typography>
+      );
     default:
       return (
         <Trans

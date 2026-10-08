@@ -4,6 +4,8 @@ import i18n from "../i18n.ts";
 import {
   AdminListGroupResponse,
   AdminListService,
+  BulkMailRecipientPreview,
+  BulkMailRecipientService,
   ListShareResponse as AdminListShareResponse,
   StoragePolicy as AdminStoragePolicy,
   BatchIDService,
@@ -28,6 +30,8 @@ import {
   Node,
   OauthCredentialStatus,
   QueueMetric,
+  SendBulkMailResponse,
+  SendBulkMailService,
   SetSettingService,
   Share as ShareEnt,
   Task,
@@ -1422,6 +1426,34 @@ export function sendTestSMTP(args: TestSMTPService): ThunkResponse<void> {
     return await dispatch(
       send(
         `/admin/tool/mail`,
+        { method: "POST", data: args },
+        {
+          ...defaultOpts,
+        },
+      ),
+    );
+  };
+}
+
+export function previewBulkMailRecipients(args: BulkMailRecipientService): ThunkResponse<BulkMailRecipientPreview> {
+  return async (dispatch, _getState) => {
+    return await dispatch(
+      send(
+        `/admin/tool/mail/recipients`,
+        { method: "POST", data: args },
+        {
+          ...defaultOpts,
+        },
+      ),
+    );
+  };
+}
+
+export function sendBulkMail(args: SendBulkMailService): ThunkResponse<SendBulkMailResponse> {
+  return async (dispatch, _getState) => {
+    return await dispatch(
+      send(
+        `/admin/tool/mail/send`,
         { method: "POST", data: args },
         {
           ...defaultOpts,

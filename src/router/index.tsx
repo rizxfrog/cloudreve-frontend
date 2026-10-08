@@ -177,6 +177,13 @@ export const router = createBrowserRouter([
                 },
               },
               {
+                path: "mail",
+                async lazy() {
+                  let { BulkMail } = await import("../component/Admin/AdminBundle.tsx");
+                  return { Component: BulkMail };
+                },
+              },
+              {
                 path: "file",
                 async lazy() {
                   let { FileSetting } = await import("../component/Admin/AdminBundle.tsx");
